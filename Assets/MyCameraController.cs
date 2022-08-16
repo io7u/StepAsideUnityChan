@@ -1,23 +1,23 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MyCameraController : MonoBehaviour
 {
-    //Unity‚¿‚á‚ñ‚ÌƒIƒuƒWƒFƒNƒg
+    //Unityã¡ã‚ƒã‚“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private GameObject unitychan;
 
-    //Unity‚¿‚á‚ñ‚ÆƒJƒƒ‰‚Ì‹——£
+    //Unityã¡ã‚ƒã‚“ã¨ã‚«ãƒ¡ãƒ©ã®è·é›¢
     private float difference;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Unity‚¿‚á‚ñ‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾
+        //Unityã¡ã‚ƒã‚“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
         this.unitychan = GameObject.Find("unitychan");
 
-        //Unity‚¿‚á‚ñ‚ÆƒJƒƒ‰‚ÌˆÊ’uizÀ•Wj‚Ì·‚ğ‹‚ß‚é
+        //Unityã¡ã‚ƒã‚“ã¨ã‚«ãƒ¡ãƒ©ã®ä½ç½®ï¼ˆzåº§æ¨™ï¼‰ã®å·®ã‚’æ±‚ã‚ã‚‹
         this.difference = unitychan.transform.position.z - this.transform.position.z;
   
     }
@@ -25,7 +25,7 @@ public class MyCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Unity‚¿‚á‚ñ‚ÌˆÊ’u‚É‡‚í‚¹‚ÄƒJƒƒ‰‚ÌˆÊ’u‚ğˆÚ“®
+        //Unityã¡ã‚ƒã‚“ã®ä½ç½®ã«åˆã‚ã›ã¦ã‚«ãƒ¡ãƒ©ã®ä½ç½®ã‚’ç§»å‹•
         this.transform.position = new Vector3(0, this.transform.position.y, this.unitychan.transform.position.z - difference);
         
 

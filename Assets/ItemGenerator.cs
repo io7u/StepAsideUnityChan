@@ -1,39 +1,39 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour
 {
-    //carPrefab‚ð“ü‚ê‚é
+    //carPrefabã‚’å…¥ã‚Œã‚‹
     public GameObject carPrefab;
 
-    //coinPrefab‚ð“ü‚ê‚é
+    //coinPrefabã‚’å…¥ã‚Œã‚‹
     public GameObject coinPrefab;
 
-    //cornPrefab‚ð“ü‚ê‚é
+    //cornPrefabã‚’å…¥ã‚Œã‚‹
     public GameObject conePrefab;
 
-    //ƒXƒ^[ƒg’n“_
+    //ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹
     private int startPos = 80;
 
-    //ƒS[ƒ‹’n“_
+    //ã‚´ãƒ¼ãƒ«åœ°ç‚¹
     private int goalPos = 360;
 
-    //ƒAƒCƒeƒ€‚ðo‚·x•ûŒü‚Ì”ÍˆÍ
+    //ã‚¢ã‚¤ãƒ†ãƒ ã‚’å‡ºã™xæ–¹å‘ã®ç¯„å›²
     private float posRange = 3.4f;
 
    
-    //Unity‚¿‚á‚ñ‚ÌƒIƒuƒWƒFƒNƒg
+    //Unityã¡ã‚ƒã‚“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private GameObject unitychan;
 
-    //unitychan‚Ì‰ß‹Ž‚ÌÀ•W
+    //unitychanã®éŽåŽ»ã®åº§æ¨™
     public float lastPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Unity‚¿‚á‚ñ‚ÌƒIƒuƒWƒFƒNƒg‚ðŽæ“¾
+        //Unityã¡ã‚ƒã‚“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
         this.unitychan = GameObject.Find("unitychan");
 
     }  
@@ -41,15 +41,15 @@ public class ItemGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ˆê’è‚Ì‹——£‚²‚Æ‚ÉƒAƒCƒeƒ€‚ð¶¬
+        //ä¸€å®šã®è·é›¢ã”ã¨ã«ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç”Ÿæˆ
        
             
-            //Œ»Ý‚Ìunitychan‚ÌÀ•W-‰ß‹Ž‚Ìunitychan‚ÌÀ•W
+            //ç¾åœ¨ã®unitychanã®åº§æ¨™-éŽåŽ»ã®unitychanã®åº§æ¨™
             if (unitychan.transform.position.z - lastPos > 15 && unitychan.transform.position.z < 320)
             {
                 lastPos = unitychan.transform.position.z;
 
-                //‚Ç‚ÌƒAƒCƒeƒ€‚ðo‚·‚Ì‚©‚ðƒ‰ƒ“ƒ_ƒ€‚ÉÝ’è
+                //ã©ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’å‡ºã™ã®ã‹ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«è¨­å®š
                 int num = Random.Range(1, 11);
 
                 if (num <= 2)
@@ -62,25 +62,25 @@ public class ItemGenerator : MonoBehaviour
                 }
                 else
                 {
-                    //ƒŒ[ƒ“‚²‚Æ‚ÉƒAƒCƒeƒ€‚ð¶¬
+                    //ãƒ¬ãƒ¼ãƒ³ã”ã¨ã«ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç”Ÿæˆ
                     for (int j = -1; j <= 1; j++)
                     {
-                        //ƒAƒCƒeƒ€‚ÌŽí—Þ‚ðŒˆ‚ß‚é
+                        //ã‚¢ã‚¤ãƒ†ãƒ ã®ç¨®é¡žã‚’æ±ºã‚ã‚‹
                         int item = Random.Range(1, 11);
 
-                        //ƒAƒCƒeƒ€‚ð’u‚­ZÀ•W‚ÌƒIƒtƒZƒbƒg‚ðƒ‰ƒ“ƒ_ƒ€‚ÉÝ’è
+                        //ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç½®ãZåº§æ¨™ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«è¨­å®š
                         int offsetZ = Random.Range(-5, 6);
 
-                        //60%ƒRƒCƒ“”z’u:30%ŽÔ”z’u:10%‰½‚à‚È‚µ
+                        //60%ã‚³ã‚¤ãƒ³é…ç½®:30%è»Šé…ç½®:10%ä½•ã‚‚ãªã—
                         if (1 <= item && item <= 6)
                         {
-                            //ƒRƒCƒ“‚ð¶¬
+                            //ã‚³ã‚¤ãƒ³ã‚’ç”Ÿæˆ
                             GameObject coin = Instantiate(coinPrefab);
                             coin.transform.position = new Vector3(posRange * j, coin.transform.position.y, unitychan.transform.position.z + 40 + offsetZ);
                         }
                         else if (7 <= item && item <= 9)
                         {
-                            //ŽÔ‚ð¶¬
+                            //è»Šã‚’ç”Ÿæˆ
                             GameObject car = Instantiate(carPrefab);
                             car.transform.position = new Vector3(posRange * j, car.transform.position.y, unitychan.transform.position.z + 40 + offsetZ);
                         }

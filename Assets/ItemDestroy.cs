@@ -1,16 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemDestroy : MonoBehaviour
 {
-    //ƒJƒƒ‰‚ÌƒIƒuƒWƒFƒNƒg
+    //ã‚«ãƒ¡ãƒ©ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
     private GameObject MainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        //MainCamera‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾
+        //MainCameraã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
         this.MainCamera = GameObject.Find("Main Camera");
 
     }
